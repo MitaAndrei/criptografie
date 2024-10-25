@@ -10,9 +10,7 @@ public class CifrulPlusN : CifrulSubstitutieMonoalfabetica
     }
     protected override void Shuffle(ref List<char> list)
     {
-        while (n > 26)
-            n %= 26;
-
+        n %= 26;
         list = [..list.TakeLast(list.Count - n), ..list.Take(n)];
     }
 }

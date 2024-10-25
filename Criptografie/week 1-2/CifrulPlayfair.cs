@@ -91,19 +91,17 @@ public class CifrulPlayfair
     
     private List<string> BreakIntoDigrams(string text)
     {
-        text = string.Join("", text.Split());
+        text = text.Replace(" ", "");
         List<string> result = [];
         
         for (int i = 0; i < text.Length; i++)
         {
             if (i == text.Length - 1)
-            {
                 result.Add($"{text[i]}x");
-                break;
-            }
-
-            if(text[i] == text[i+1])
+            
+            else if(text[i] == text[i+1])
                 result.Add($"{text[i]}x");
+            
             else
             {
                 result.Add($"{text[i]}{text[i + 1]}");
